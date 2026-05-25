@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="top-bar">
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="Search tasks...">
+            </div>
+            <button id="open-add-modal-btn" class="btn-primary"><i class="fa-solid fa-plus"></i> Add New Task</button>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn text-warning" data-filter="uncompleted">Uncompleted</button>
+            <button class="filter-btn text-success" data-filter="completed">Completed</button>
+        </div>
+
+        <table class="task-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th class="center-text">Status</th>
+                    <th class="center-text">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="task-list">
+                <tr>
+                    <td class="task-title">Design UI Mockup</td>
+                    <td class="task-desc">Create the HTML and CSS structure for the extension.</td>
+                    <td class="center-text">
+                        <button class="status-btn"><i class="fa-regular fa-circle"></i></button>
+                    </td>
+                    <td class="center-text actions-cell">
+                        <button class="action-btn edit-btn"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+                        <button class="action-btn delete-btn"><i class="fa-solid fa-trash-can"></i> Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div id="task-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modal-title">Add New Task</h2>
+            <form id="task-form">
+                <input type="hidden" id="task-id">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="task-title-input" required placeholder="e.g., Review Security">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="task-desc-input" rows="3" placeholder="e.g., Scan for vulnerabilities..."></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" id="cancel-modal-btn" class="btn-secondary">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

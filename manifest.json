@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "To-Do List",
+  "version": "1.0",
+  "description": "A clean, functional task manager for your browser.",
+  "action": {
+    "default_title": "To-Do List"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "tabs"]
+}
